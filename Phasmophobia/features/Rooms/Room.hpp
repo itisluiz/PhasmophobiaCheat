@@ -6,7 +6,7 @@
 #pragma pack(8)
 class Room : public II::MonoBehaviour {
 public:
-	char space1[0x48];
+	char space1[0x40];
 	II::String* name;
 
 	static auto InitOnce() -> void;

@@ -26,8 +26,6 @@ auto GhostFeatures::Render() -> void {
 
 		if (ImGui::Button(U8(u8"传送到鬼房 (DelayTeleportToFavouriteRoom)"))) { std::thread([] { try { GhostAI::mDelayTeleportToFavouriteRoom(GhostAI::ghost, 0); } catch (...) {} }).join(); }
 
-		if (ImGui::Button(U8(u8"互动 (Interact)"))) { std::thread([] { try { GhostActivity::mInteract(GhostAI::ghost->ghostActivity); } catch (...) {} }).join(); }
-
 		if (ImGui::Button(U8(u8"随机门互动 (InteractWithARandomDoor)"))) { std::thread([] { try { GhostActivity::mInteractWithARandomDoor(GhostAI::ghost->ghostActivity); } catch (...) {} }).join(); }
 
 		if (ImGui::Button(U8(u8"随机物品互动 (InteractWithARandomProp)"))) { std::thread([] { try { GhostActivity::mInteractWithARandomProp(GhostAI::ghost->ghostActivity, true, true); } catch (...) {} }).join(); }
@@ -36,11 +34,8 @@ auto GhostFeatures::Render() -> void {
 
 		if (ImGui::Button(U8(u8"双互动 (TwinInteraction)"))) { std::thread([] { try { GhostActivity::mTwinInteraction(GhostAI::ghost->ghostActivity, true); } catch (...) {} }).join(); }
 
-		if (ImGui::Button(U8(u8"检查最近电子设备 (CheckIfNearbyElectronicsAreOn)"))) { std::thread([] { try { GhostActivity::mCheckIfNearbyElectronicsAreOn(GhostAI::ghost->ghostActivity); } catch (...) {} }).join(); }
-
 		if (ImGui::Button(U8(u8"鬼魂能力 (GhostAbility)"))) { std::thread([] { try { GhostActivity::mGhostAbility(GhostAI::ghost->ghostActivity); } catch (...) {} }).join(); }
 
-		if (ImGui::Button(U8(u8"强制与道具交互 (ForceInteractWithProp)"))) { std::thread([] { try { GhostActivity::mForceInteractWithProp(GhostAI::ghost->ghostActivity, true); } catch (...) {} }).join(); }
 	} else ImGui::Text(U8(u8"只有鬼存在时可用 (Only available when Jinn is present.)"));
 }
 

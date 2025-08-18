@@ -102,7 +102,7 @@ public:
     bool hunt;
 
     static auto InitOnce() -> void;
-	inline static GhostAI* ghost{};
+    inline static GhostAI* ghost{};
 
     inline static IM::MethodPointer<void, GhostAI*, int> mAppear{};
     inline static IM::MethodPointer<void, GhostAI*> mUnAppear{};
@@ -125,14 +125,11 @@ public:
     II::List<void*>* objectsToInteractWith;
     II::List<void*>* space1;
     GhostAI* ghostAi;
-    inline static IM::MethodPointer<void, GhostActivity*> mInteract{};
     inline static IM::MethodPointer<bool, GhostActivity*> mInteractWithARandomDoor{};
     inline static IM::MethodPointer<void, GhostActivity*, bool, bool> mInteractWithARandomProp{};
     inline static IM::MethodPointer<void, GhostActivity*, bool> mNormalInteraction{};
     inline static IM::MethodPointer<void*, GhostActivity*, bool> mTwinInteraction{};
-    inline static IM::MethodPointer<void, GhostActivity*> mCheckIfNearbyElectronicsAreOn{};
     inline static IM::MethodPointer<void, GhostActivity*> mGhostAbility{};
-    inline static IM::MethodPointer<void, GhostActivity*, bool> mForceInteractWithProp{};
 private:
 };
 #endif

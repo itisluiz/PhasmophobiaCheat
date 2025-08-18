@@ -18,14 +18,11 @@ auto GhostAI::InitOnce() -> void {
 	}
 
 	if (const auto pClass = I::Get("Assembly-CSharp.dll")->Get("GhostActivity")) {
-		GhostActivity::mInteract = pClass->Get<IM>("Interact")->Cast<void, GhostActivity*>();
 		GhostActivity::mInteractWithARandomDoor = pClass->Get<IM>("InteractWithARandomDoor")->Cast<bool, GhostActivity*>();
 		GhostActivity::mInteractWithARandomProp = pClass->Get<IM>("InteractWithARandomProp")->Cast<void, GhostActivity*, bool, bool>();
 		GhostActivity::mNormalInteraction = pClass->Get<IM>("NormalInteraction")->Cast<void, GhostActivity*, bool>();
 		GhostActivity::mTwinInteraction = pClass->Get<IM>("TwinInteraction")->Cast<void*, GhostActivity*, bool>();
-		GhostActivity::mCheckIfNearbyElectronicsAreOn = pClass->Get<IM>("CheckIfNearbyElectronicsAreOn")->Cast<void, GhostActivity*>();
 		GhostActivity::mGhostAbility = pClass->Get<IM>("GhostAbility")->Cast<void, GhostActivity*>();
-		GhostActivity::mForceInteractWithProp = pClass->Get<IM>("ForceInteractWithProp")->Cast<void, GhostActivity*, bool>();
 	}
 
 	if (mAwake) {
