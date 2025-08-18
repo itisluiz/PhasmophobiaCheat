@@ -28,26 +28,6 @@ namespace Inject___launcher {
                 new Thread(
                            () => {
                                this.listBox1.Items.Add(Log.FormatLog("准备启动游戏... (Preparing to launch game...)"));
-                               this.listBox1.Items.Add(Log.FormatLog("剔除检测: " + (this.checkBox1.Checked ? "已启用" : "未启用") + " (Detection removal: " + (this.checkBox1.Checked ? "Enabled" : "Disabled") + ")"));
-                               if (this.checkBox1.Checked) {
-                                   this.listBox1.Items.Add(Log.FormatLog("正在剔除检测... (Removing detection...)"));
-                                   if (this.textBox1.Text == "") {
-                                       this.listBox1.Items.Add(Log.FormatLog("未选择游戏目录! (Game directory not selected!)"));
-                                       this.button1.Enabled = true;
-                                       return;
-                                   }
-
-                                   this.listBox1.Items.Add(Log.FormatLog("正在替换文件... (Replacing files...)"));
-                                   try { File.Copy("KS_Diagnostics_Process.dll", this.textBox1.Text + "\\Phasmophobia_Data\\Plugins\\x86_64\\KS_Diagnostics_Process.dll", true); } catch (UnauthorizedAccessException ex) {
-                                       // TODO: Handle the System.UnauthorizedAccessException
-                                       MessageBox.Show("复制文件出错\n" + ex.ToString() + " (Error copying file\n" + ex.ToString() + ")", "错误 (Error)", MessageBoxButtons.OK, MessageBoxIcon.Error, MessageBoxDefaultButton.Button1, MessageBoxOptions.DefaultDesktopOnly);
-                                       this.listBox1.Items.Add(Log.FormatLog("复制文件出错! (Error copying file!)"));
-                                       this.button1.Enabled = true;
-                                   }
-
-                                   this.listBox1.Items.Add(Log.FormatLog("复制文件成功! (File copied successfully!)"));
-                                   this.listBox1.Items.Add(Log.FormatLog("剔除检测成功! (Detection removal successful!)"));
-                               }
                                this.listBox1.Items.Add(Log.FormatLog("正在启动游戏... (Launching game...)"));
 
                                string url = "steam://rungameid/739630";

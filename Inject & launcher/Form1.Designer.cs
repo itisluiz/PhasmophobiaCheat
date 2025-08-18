@@ -28,7 +28,6 @@
             this.textBox1 = new TextBox();
             this.label1 = new Label();
             this.button2 = new Button();
-            this.checkBox1 = new CheckBox();
             this.linkLabel1 = new LinkLabel();
             this.listBox1 = new ListBox();
             this.button3 = new Button();
@@ -80,17 +79,6 @@
             this.button2.Text = "选择 (Select)";
             this.button2.UseVisualStyleBackColor = false;
             this.button2.Click += button2_Click;
-            // 
-            // checkBox1
-            // 
-            this.checkBox1.AutoSize = true;
-            this.checkBox1.Font = new Font("微软雅黑", 10.5F, FontStyle.Regular, GraphicsUnit.Point, 0);
-            this.checkBox1.Location = new Point(12, 60);
-            this.checkBox1.Name = "checkBox1";
-            this.checkBox1.Size = new Size(172, 24);
-            this.checkBox1.TabIndex = 5;
-            this.checkBox1.Text = "无检测 (No detection)";
-            this.checkBox1.UseVisualStyleBackColor = true;
             // 
             // linkLabel1
             // 
@@ -148,7 +136,6 @@
             Controls.Add(this.button3);
             Controls.Add(this.listBox1);
             Controls.Add(this.linkLabel1);
-            Controls.Add(this.checkBox1);
             Controls.Add(this.button2);
             Controls.Add(this.label1);
             Controls.Add(this.textBox1);
@@ -172,7 +159,6 @@
         private TextBox textBox1;
         private Label label1;
         private Button button2;
-        private CheckBox checkBox1;
         private LinkLabel linkLabel1;
         private ListBox listBox1;
         private Button button3;
