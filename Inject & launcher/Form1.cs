@@ -1,4 +1,6 @@
 ﻿using System.Diagnostics;
+using System.Security.Cryptography;
+using System.Text;
 
 namespace Inject___launcher {
     using System.ComponentModel;
@@ -61,12 +63,29 @@ namespace Inject___launcher {
             }
         }
 
+        private static string GenerateRandomAlphanumeric(int length) {
+            const string chars = "ABCDEFGHIJKLMNOPQRSTUVWXYZabcdefghijklmnopqrstuvwxyz0123456789";
+            StringBuilder result = new StringBuilder(length);
+            using (RandomNumberGenerator rng = RandomNumberGenerator.Create()) {
+                byte[] data = new byte[length];
+                rng.GetBytes(data);
+                
+                for (int i = 0; i < length; i++) {
+                    result.Append(chars[data[i] % chars.Length]);
+                }
+            }
+            return result.ToString();
+        }
+
         /// <summary>
         /// 
         /// </summary>
         /// <param name="sender"></param>
         /// <param name="e"></param>
         private void Form1_Load(object sender, EventArgs e) {
+            // Set random window title
+            this.Text = GenerateRandomAlphanumeric(12);
+            
             this.textBox1.PlaceholderText = "路径... (Path...)";
             this.listBox1.Items.Add(Log.FormatLog("启动器启动! (Launcher started!)"));
         }
